@@ -5,10 +5,11 @@
    "homepage":"https://bhaikar.github.io/newdotsite/",
   
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "dev": "next dev",
+  "build": "next build",
+  "export": "next export",
+  "start": "next start",
+  "homepage": "https://bhaikar.github.io/newdotsite"
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
