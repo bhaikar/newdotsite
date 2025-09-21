@@ -2,6 +2,8 @@
   "name": "dot",
   "version": "0.1.0",
   "private": true,
+   "homepage":"https://bhaikar.github.io/newdotsite/",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
