@@ -36,7 +36,7 @@ export default function Navbar() {
       ],
        },
 
-    { name: "Contact Us", path: "/contact" },
+    { name: "Contact Us", path: "/contactus" },
   ];
 
   return (
