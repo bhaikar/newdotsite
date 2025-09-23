@@ -64,7 +64,7 @@ const StyledWrapper = styled.div`
     opacity: 0.6;
     left: 0;
     top: 0;
-    margin-left: -50%;
+    margin-left: -10%;
     margin-top: 10%;
     background-color: rgba(255, 255, 255, 0.074);
     border: 1px solid rgba(255, 255, 255, 0.222);

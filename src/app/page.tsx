@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex items-center justify-center min-h-screen bg-white">
       <div className="relative w-full h-[100vh]">
         {/* Spline scene */}
-        <Spline scene="https://prod.spline.design/Hwlcz5JZMTZgK9OQ/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/eWxS0Vnw4PAaLy5z/scene.splinecode" />
 
         {/* Overlay glassmorphic button (doesn't block mouse) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

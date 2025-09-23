@@ -154,7 +154,7 @@ const secondYear = [
     
 const OurTeam = () => {
     return (
-        <div className="w-full min-h-screen bg-slate-900">
+        <div className="main-w-full min-h-screen bg-slate-900">
             <Navbar />
             <div className="w-full min-h-screen flex flex-col items-center pt-20 pb-10">
                 <h1 className="text-4xl font-bold text-white mb-10">Our Team</h1>
