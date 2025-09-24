@@ -19,7 +19,8 @@ export default function AboutPage() {
 
         {/* About Content */}
         <section className="py-12 px-4 text-center md:py-16">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6">About Us</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 ">About Us</h1>
+          <div className="w-24 sm:w-32 lg:w-40 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 sm:mt-6 rounded-full"></div>
           <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
             We are a passionate travel agency dedicated to curating unforgettable
             journeys across the globe. Our mission is to make your travel

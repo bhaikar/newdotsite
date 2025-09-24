@@ -9,7 +9,7 @@ const Card = ({
   imageAlt = "Person",
 }) => {
   return (
-    <div className="relative w-65 h-85 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 rounded-2xl shadow-2xl shadow-slate-900/50 transition-all duration-700 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 group cursor-pointer overflow-hidden">
+    <div className="relative w-55 h-75 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 rounded-2xl shadow-2xl shadow-slate-900/50 transition-all duration-700 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 group cursor-pointer overflow-hidden">
       
       {/* Animated background glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse rounded-2xl"></div>
@@ -22,7 +22,7 @@ const Card = ({
       
       {/* Profile Image */}
       <div className="relative mx-auto mt-6 mb-4 group/image">
-         <div className="w-50 h-50 rounded-full overflow-hidden border-2 border-slate-600 group-hover:border-cyan-400 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-400/30 mx-auto">
+         <div className="w-35 h-35 rounded-full overflow-hidden border-2 border-slate-600 group-hover:border-cyan-400 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-400/30 mx-auto">
           <Image
             src={imageSrc} 
             alt={imageAlt}

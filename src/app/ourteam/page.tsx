@@ -5,150 +5,223 @@ import Footer from '@/components/footer';
 import Card from '@/components/otcard';
 
 // Add this team data at the top of your component
+const Convener = [
+  {
+    name: "Dr. Prashanth H S",
+    description: " Assistant Professor, Dept. of CSE",
+    imageSrc: "/images/OTImages/vinod.jpg",
+    imageAlt: "Dr. Prashanth H S"
+  }
+];
 const fourthYear = [
   {
     name: "Tatvika Sharma",
     description: "President",
     imageSrc: "/images/OTImages/Tatvika.jpg",
-    imageAlt: "Walter Smith"
+    imageAlt: "tatvika"
   },
   {
     name: "Akash Hariharan", 
-    description: "I'm Sarah, a UX/UI designer passionate about creating intuitive and accessible digital experiences. I specialize in user research and design systems.",
-    imageSrc: "/images/sarah.png",
-    imageAlt: "Sarah Johnson"
+    description: "Vice President",
+    imageSrc: "/images/OTImages/Akash.png",
+    imageAlt: "akash"
   },
   {
-    name: "Michael Chen",
-    description: "I'm Michael, a full-stack developer who loves building scalable web applications. I specialize in React, Node.js, and cloud architecture.",
-    imageSrc: "/images/michael.png", 
-    imageAlt: "Michael Chen"
+    name: "Kushal C J",
+    description: "Digital Head &                  Treasurer",
+    imageSrc: "/images/OTImages/Kushal.jpg", 
+    imageAlt: "kushal"
   },
   {
-    name: "Emma Davis",
-    description: "I'm Emma, a digital marketing specialist focused on data-driven strategies and brand storytelling. I excel in SEO and content marketing.",
-    imageSrc: "/images/emma.png",
-    imageAlt: "Emma Davis"
+    name: "Jnanavi Venugopal",
+    description: "General Secretary",
+    imageSrc: "/images/OTImages/Jnanavi.jpg",
+    imageAlt: "jnanavi"
   },
   {
-    name: "Alex Rodriguez",
-    description: "I'm Alex, a travel consultant with 8 years of experience crafting unforgettable journeys. I specialize in luxury travel and adventure tourism.",
-    imageSrc: "/images/alex.png",
-    imageAlt: "Alex Rodriguez"
+    name: "Sanjana Desh",
+    description: "Technical Director",
+    imageSrc: "/images/OTImages/Sanjana.jpg",
+    imageAlt: "sanjana"
   },
   {
-    name: "Lisa Wang",
-    description: "I'm Lisa, a travel photographer and content creator who captures the essence of destinations. I help clients discover hidden gems.",
-    imageSrc: "/images/lisa.png",
-    imageAlt: "Lisa Wang"
+    name: "Sunitha P",
+    description: "Head of Internal Affairs",
+    imageSrc: "/images/OTImages/Sunitha.heic",
+    imageAlt: "sunitha"
   },
   {
-    name: "James Wilson",
-    description: "I'm James, a destination specialist focused on sustainable and eco-friendly travel. I create responsible tourism experiences.",
-    imageSrc: "/images/james.png",
-    imageAlt: "James Wilson"
+    name: "Nithyashree C P",
+    description: "Editorial Head",
+    imageSrc: "/images/OTImages/nithya.jpg",
+    imageAlt: "nithyashree"
   },
   {
-    name: "Maya Patel",
-    description: "I'm Maya, a cultural travel expert who designs immersive experiences. I specialize in culinary tours and authentic cultural exchanges.",
-    imageSrc: "/images/maya.png",
+    name: "Nishigandha S",
+    description: "Editorial Head",
+    imageSrc: "/images/OTImages/Nishi.jpg",
     imageAlt: "Maya Patel"
+  },
+  {
+    name: "Karthik",
+    description: "Event Director",
+    imageSrc: "/images/OTImages/karthik3.jpg",
+    imageAlt: "Karthik"
+  },
+  {
+    name: "Mohammed Azam",
+    description: "Event Director & Project Director",
+    imageSrc: "/images/OTImages/azam.jpg",
+    imageAlt: "Mohammed Azam"
+  },
+  {
+    name: "Vishwas M Bharadwaj",
+    description: "Project Director",
+    imageSrc: "/images/OTImages/vishwas.jpg",
+    imageAlt: "Vishwas M Bharadwaj"
+  },
+  {
+    name: "Diya S Thange",
+    description: "Project Director",
+    imageSrc: "/images/OTImages/diya.png",
+    imageAlt: "Diya S Thange"
+  },
+  {
+    name: "Jahnavi H K",
+    description: "Creative Director",
+    imageSrc: "/images/OTImages/jahnavi.jpg",
+    imageAlt:   "Jahnavi H K"
+  },
+  {
+    name: "Saniya",
+    description: "Creative Director",
+    imageSrc: "/images/OTImages/saniya.jpeg",
+    imageAlt:   "Jahnavi H K"
   }
 ];
 
 const thirdYear = [
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Nithin H C",
+      description: "Treasury Subordinate",
+      imageSrc: "/images/OTImages/Nithin.png",
+      imageAlt: "Nithin H C"
+      },
+    {
+      name: "Prathyusha v Kumar",
+      description: "Treasury Subordinate",
+      imageSrc: "/images/OTImages/pratyusha .jpg",
+      imageAlt: "Prathyusha v Kumar"
       },
       
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Akshatha",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/aksh.png",
+      imageAlt: "Akshatha"
       },
       
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Anuj",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/Anuj.png",
+      imageAlt: "Anuj"
       },
       
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Geetha H",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/Geetha.jpg",
+      imageAlt: "Geetha H"
       },
       
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Prasad Malegaon",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/PP.png",
+      imageAlt: "Prasad Malegaon"
       },
       
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Mariam Noorani",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/Mariam.png",
+      imageAlt: "Mariam Noorani"
       },
-      
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-      imageSrc: "/images/john.png",
-      imageAlt: "John Doe"
+      name: "Likith Shetty",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/liki.jpg",
+      imageAlt: "Likith Shetty"
+      },
+    {
+      name: "Namrath",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/namrath.jpg",
+      imageAlt: "Namrath"
+      },
+    {
+      name: "Tilak Shetty",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/tilak.jpg",
+      imageAlt: "Tilak Shetty"
+      },
+    {
+      name: "Yashika D",
+      description: "Student Member",
+      imageSrc: "/images/OTImages/Yash.png",
+      imageAlt: "Yashika D"
       },
 ];
 
 const secondYear = [
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "Akash",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/akash1.JPG",
+        imageAlt: "Akash"
         },
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "Chandana HR",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/chandana.jpg",
+        imageAlt: "Chandana HR"
         },
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "DHEERAJ KUMAR BHAIKAR",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/dheeraj.png",
+        imageAlt: "DHEERAJ KUMAR BHAIKAR"
         },
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "Karthik K L",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/kartik.jpg",
+        imageAlt: "Karthik K L"
         },
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "Rashmi M",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/rashmi.jpg",
+        imageAlt: "Rashmi M"
         },
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "Shreedha M M",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/shreedha.jpg",
+        imageAlt: "Shreedha M M"
         },
     {
-      name: "John Doe",
-      description: "I'm John, a passionate developer with a knack for problem-solving and creating efficient code.",
-        imageSrc: "/images/john.png",
-        imageAlt: "John Doe"
+      name: "Shravya Jain HS",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/shravya.jpg",
+        imageAlt: "Shravya Jain HS"
+        },
+    {
+      name: "Tejas",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/tejas.jpg",
+        imageAlt: "Tejas"
         },
     ];
     
@@ -157,11 +230,22 @@ const OurTeam = () => {
         <div className="main-w-full min-h-screen bg-slate-900">
             <Navbar />
             <div className="w-full min-h-screen flex flex-col items-center pt-20 pb-10">
-                <h1 className="text-4xl font-bold text-white mb-10">Our Team</h1>
+                <h1 className="text-4xl font-bold text-white mb-10">Convener</h1>
+                <div className="grid grid-cols-1  mb-12">
+                    {Convener.map((member, index) => (
+                        <Card
+                            key={index}
+                            name={member.name}
+                            description={member.description}
+                            imageSrc={member.imageSrc}
+                            imageAlt={member.imageAlt}
+                        />
+                    ))}
+                </div>
                 
                 {/* Replace your 8 identical cards with this: */}
                 <h2 className="text-2xl font-semibold text-white mb-6">4th Years</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15 md:gap-6 lg:gap-15">
                     {fourthYear.map((member, index) => (
                         <Card 
                             key={index}
@@ -172,8 +256,8 @@ const OurTeam = () => {
                         />
                     ))}
                 </div>
-                    <h2 className='text-2x1 font-semibold text-white mb-6'>3rd Years</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-8">
+                    <h2 className='text-2x1 font-semibold text-[35px] text-white py-10 mb-6'>3rd Years</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15 md:gap-6 lg:gap-15">
                         {thirdYear.map((member, index) => (
                             <Card 
                                 key={index}
@@ -184,8 +268,8 @@ const OurTeam = () => {
                             />
                         ))}
                     </div>
-                    <h2 className='test-2x1 font-semibold text-white mb-6'>2nd Years</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-8">
+                    <h2 className='test-2x1 font-semibold text-[35px] text-white py-10 mb-6'>2nd Years</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15 md:gap-6 lg:gap-15">
                         {secondYear.map((member, index) => (
                             <Card
                                 key={index}

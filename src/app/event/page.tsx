@@ -97,6 +97,16 @@ Two standout events, Thief City and Phat Anthaheli, were major highlights of .By
     }
   ], []);
 
+  // Initialize image indexes properly
+  useEffect(() => {
+    const initialIndexes: { [key: string]: number } = {};
+    events.forEach((event) => {
+      const eventKey = `event-${event.id}`;
+      initialIndexes[eventKey] = 0;
+    });
+    setCurrentImageIndexes(initialIndexes);
+  }, [events]);
+
   // Image slider logic
   useEffect(() => {
     const intervalIds: { [key: string]: NodeJS.Timeout } = {};
@@ -172,19 +182,41 @@ Two standout events, Thief City and Phat Anthaheli, were major highlights of .By
     const currentIndex = currentImageIndexes[eventKey] || 0;
 
     return (
-      <div className="w-full h-auto flex justify-center overflow-hidden relative">
+      <div className="w-full h-64 flex justify-center overflow-hidden relative rounded-t-2xl bg-slate-700">
         {images.map((image, index) => (
-          <Image
+          <div
             key={index}
-            src={image}
-            alt={`Event ${eventId} - ${index + 1}`}
-            width={640}
-            height={360}
-            className={`w-full h-auto transition-opacity duration-300 absolute top-0 left-0 ${index === currentIndex ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-            priority={index === 0}
-            loading={index === 0 ? undefined : 'lazy'}
-          />
+            className={`absolute inset-0 transition-opacity duration-500 ${
+              index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`Event ${eventId} - ${index + 1}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={index === 0}
+              onError={() => {
+                console.error(`Failed to load image: ${image}`);
+                // Optional: Set a fallback image
+                // e.currentTarget.src = '/images/fallback.jpg';
+              }}
+            />
+          </div>
         ))}
+        
+        {/* Image indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     );
   };
@@ -197,6 +229,7 @@ Two standout events, Thief City and Phat Anthaheli, were major highlights of .By
         <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
           Our Journey
         </h1>
+        <div className="w-24 sm:w-32 lg:w-40 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 sm:mt-6 rounded-full"></div>
         <p className="text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
           From passionate beginners to industry leaders, explore the milestones that shaped our DevOps community.
         </p>

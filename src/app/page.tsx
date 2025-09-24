@@ -12,8 +12,8 @@ export default function Home() {
 
         {/* Overlay glassmorphic button (doesn't block mouse) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Link href="/aboutus" className="pointer-events-auto">
-            <button className="px-8 py-4 rounded-2xl text-white font-semibold text-lg 
+          <Link href="/aboutus" className="pointer-events-auto mt-25">
+            <button className="px-8 py-4 cursor-pointer rounded-2xl text-white font-semibold text-lg 
               bg-white/10 backdrop-blur-md border border-white/20 
               shadow-xl hover:bg-white/20 transition duration-300">
               Go to About Us

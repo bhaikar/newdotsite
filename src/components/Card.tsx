@@ -6,6 +6,7 @@ interface CardProps {
   title: string;
   description: string;
 }
+
 const Card: React.FC<CardProps> = ({ title, description }) => {
   return (
     <StyledWrapper>
@@ -29,10 +30,11 @@ const Card: React.FC<CardProps> = ({ title, description }) => {
         15.2665 11.4515 13.921C13.1353 12.4181 15.3198 11.5908 17.6022 11.5908C18.3804 11.5908 19.1477 11.6864
         19.8922 11.8742V14.7235C19.8922 15.2278 19.7589 15.7254 19.5119 16.1662C18.7615 15.3596 17.6806 14.8528
          16.4783 14.8528C14.2136 14.8528 12.3781 16.6466 12.3781 18.8598C12.3781 19.3937 12.4861 19.9021 12.68
-         20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z" /></svg><br />
+         20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z" />
+          </svg><br />
           {title}
           <br />
-          <div className="name text-[50px]">{description}</div>
+          <div className="name">{description}</div>
         </div>
       </div>
     </StyledWrapper>
@@ -40,76 +42,182 @@ const Card: React.FC<CardProps> = ({ title, description }) => {
 }
 
 const StyledWrapper = styled.div`
- .e-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+
+  .e-card {
     background: transparent;
     box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
     border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* smooth animation */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin: 0 auto;
+  }
+
+  /* Responsive breakpoints */
+  @media (min-width: 480px) {
+    .e-card {
+      max-width: 320px;
+      height: 320px;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .e-card {
+      max-width: 360px;
+      height: 360px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .e-card {
+      max-width: 400px;
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .e-card {
+      max-width: 450px;
+      height: 450px;
+    }
   }
 
   /* Hover effect */
   .e-card:hover {
-    transform: translateY(-10px) scale(1.05); /* lift up & slightly zoom */
-    box-shadow: 0px 12px 40px -8px rgba(0, 0, 0, 0.6); /* stronger shadow */
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 12px 40px -8px rgba(0, 0, 0, 0.6);
   }
 
   .wave {
     position: absolute;
-    width: 540px;
-    height: 700px;
+    width: 120%;
+    height: 160%;
     opacity: 0.6;
-    left: 0;
-    top: 0;
-    margin-left: -10%;
-    margin-top: 10%;
+    left: -10%;
+    top: 10%;
     background-color: rgba(255, 255, 255, 0.074);
     border: 1px solid rgba(255, 255, 255, 0.222);
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
   }
 
   .icon {
-    width: 3em;
-    margin-top: -4em;
-    margin-left: 10em;
-    padding-bottom: 1em;
+    width: 2em;
+    margin-top: -2.5em;
+    margin-left: 0;
+    padding-bottom: 0.5em;
+  }
 
+  /* Responsive icon sizing */
+  @media (min-width: 480px) {
+    .icon {
+      width: 2.5em;
+      margin-top: -3em;
+      padding-bottom: 0.75em;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .icon {
+      width: 2.75em;
+      margin-top: -3.5em;
+      padding-bottom: 1em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .icon {
+      width: 3em;
+      margin-top: -4em;
+      margin-left: 10em;
+      padding-bottom: 1em;
+    }
   }
 
   .infotop {
     text-align: center;
-    font-size: 20px;
+    font-size: 14px;
     position: absolute;
-    top: 5.6em;
+    top: 45%;
     left: 0;
     right: 0;
     color: rgb(255, 255, 255);
     font-weight: 600;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+  }
+
+  /* Responsive text sizing */
+  @media (min-width: 480px) {
+    .infotop {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .infotop {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .infotop {
+      font-size: 20px;
+      top: 5.6em;
+      transform: none;
+    }
   }
 
   .name {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 100;
     position: relative;
     top: 1em;
     text-transform: capitalize;
+    line-height: 1.2;
+  }
+
+  /* Responsive name text sizing */
+  @media (min-width: 480px) {
+    .name {
+      font-size: 13px;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .name {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .name {
+      font-size: 14px;
+    }
   }
 
   .wave:nth-child(2),
   .wave:nth-child(3) {
-    top: 210px;
+    top: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    .wave:nth-child(2),
+    .wave:nth-child(3) {
+      top: 210px;
+    }
   }
 
   .playing .wave {
-    border-radius: 40%;
     animation: wave 3000ms infinite linear;
-  }
-
-  .wave {
-    border-radius: 40%;
-    animation: wave 55s infinite linear;
   }
 
   .playing .wave:nth-child(2) {
@@ -135,6 +243,7 @@ const StyledWrapper = styled.div`
     100% {
       transform: rotate(360deg);
     }
-  }`;
+  }
+`;
 
 export default Card;
