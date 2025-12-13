@@ -33,7 +33,7 @@ const ContactUsPage = () => {
                 {[
                   <LinkedIn key="linkedin" />,
                   <Insta key="insta" />,
-                  <Fb key="fb" />,
+                  <Fb key="fb"   />,
                   <Discord key="discord" />
                 ].map((Component, index) => (
                   <div key={index} className={`${index % 2 === 0 ? "ml-0" : "ml-8 sm:ml-12 md:ml-16 lg:ml-32"} transition-all duration-300`}>
