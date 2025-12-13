@@ -10,11 +10,11 @@ const Tooltip = () => {
             <div className="user">
               <div className="img">LI</div>
               <div className="details">
-                <div className="name">User</div>
-                <div className="username">@username</div>
+                <div className="name">DevOps</div>
+                <div className="username">devops_malnad</div>
               </div>
             </div>
-            <div className="about">500+ Connections</div>
+            <div className="about">150+ Connections</div>
           </div>
         </div>
         <div className="text">

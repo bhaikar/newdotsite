@@ -2,21 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
-interface NavLink {
-  name: string;
-  path?: string;
-  children?: { name: string; path: string }[];
-}
+type Child = { name: string; path: string };
+type NavLink = { name: string; path?: string; children?: Child[] };
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const navRef = useRef<HTMLElement | null>(null);
 
   const navLinks: NavLink[] = [
     { name: "Home", path: "/" },
@@ -33,126 +30,120 @@ export default function Navbar() {
       name: "Our Team",
       children: [
         { name: "Team", path: "/ourteam" },
-        { name: "Login", path: "https://devops-malnad.github.io/DevopsAttendanceSystem/" },
+        {
+          name: "Login",
+          path: "https://devops-malnad.github.io/DevopsAttendanceSystem/",
+        },
       ],
     },
     { name: "Contact Us", path: "/contactus" },
   ];
 
-  // Close dropdowns when clicking outside
+  // close when clicking outside nav
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node;
-      let clickedInside = false;
-      
-      Object.values(dropdownRefs.current).forEach(ref => {
-        if (ref && ref.contains(target)) {
-          clickedInside = true;
-        }
-      });
-      
-      if (!clickedInside) {
+    const handler = (e: MouseEvent) => {
+      const t = e.target as Node;
+      if (navRef.current && !navRef.current.contains(t)) {
         setActiveDropdown(null);
+        setIsOpen(false);
       }
     };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // Close mobile menu when route changes
+  // close when route changes
   useEffect(() => {
     setIsOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
 
-  const toggleDropdown = (name: string, event?: React.MouseEvent) => {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setActiveDropdown(prevActive => prevActive === name ? null : name);
-  };
+  const toggleDropdown = (name: string) =>
+    setActiveDropdown((p) => (p === name ? null : name));
 
   const handleMobileMenuClose = () => {
     setIsOpen(false);
     setActiveDropdown(null);
   };
 
-  const handleMobileDropdownClick = (name: string, event: React.MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-    toggleDropdown(name, event);
+  const renderChildLink = (child: Child, onClickClose?: () => void) => {
+    // external link?
+    if (/^https?:\/\//.test(child.path)) {
+      return (
+        <a
+          key={child.path}
+          href={child.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block px-4 py-3 text-white hover:text-cyan-400 hover:bg-white/10 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-cyan-400/20"
+          onClick={onClickClose}
+        >
+          {child.name}
+        </a>
+      );
+    }
+    return (
+      <Link
+        key={child.path}
+        href={child.path}
+        onClick={onClickClose}
+        className={`block px-4 py-3 text-white hover:text-cyan-400 hover:bg-white/10 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-cyan-400/20 ${
+          pathname === child.path ? "text-cyan-400 bg-white/10" : ""
+        }`}
+      >
+        {child.name}
+      </Link>
+    );
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg w-[90%] max-w-6xl px-6 py-3 flex items-center justify-between z-50">
+    <nav
+      ref={navRef}
+      className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg w-[90%] max-w-6xl px-4 py-3 flex items-center justify-between z-50"
+      aria-label="Main navigation"
+    >
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-2">
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
       </Link>
 
       {/* Desktop Links */}
-      <div className="hidden md:flex space-x-8 text-white">
+      <div className="hidden md:flex space-x-8 text-white items-center">
         {navLinks.map((link) =>
           link.children ? (
-            <div 
-              key={link.name} 
-              className="relative group"
-              ref={(el) => {
-                dropdownRefs.current[link.name] = el;
-              }}
-              onMouseEnter={() => setActiveDropdown(link.name)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
+            <div key={link.name} className="relative" onMouseLeave={() => setActiveDropdown(null)}>
               <button
-                onClick={(e) => toggleDropdown(link.name, e)}
-                className="flex items-center cursor-pointer font-medium hover:text-cyan-400 transition-colors duration-200 py-2"
+                onClick={() => toggleDropdown(link.name)}
+                onMouseEnter={() => setActiveDropdown(link.name)}
                 aria-expanded={activeDropdown === link.name}
-                aria-haspopup="true"
+                className="flex items-center cursor-pointer font-medium hover:text-cyan-400 transition-colors duration-200 py-2"
               >
                 {link.name}
-                <ChevronDown 
-                  size={16} 
+                <ChevronDown
+                  size={16}
                   className={`ml-1 transition-transform duration-200 ${
-                    activeDropdown === link.name ? 'rotate-180' : ''
-                  }`} 
+                    activeDropdown === link.name ? "rotate-180" : ""
+                  }`}
                 />
               </button>
-              
+
               {/* Desktop Dropdown */}
-              <div 
-                className={`absolute left-0 top-full mt-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl min-w-[180px] overflow-hidden transition-all duration-300 origin-top ${
-                  activeDropdown === link.name 
-                    ? 'opacity-100 scale-100 visible translate-y-0' 
-                    : 'opacity-0 scale-95 invisible translate-y-2'
+              <div
+                className={`absolute left-0 top-full mt-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl min-w-[180px] overflow-hidden transition-all duration-200 origin-top ${
+                  activeDropdown === link.name
+                    ? "opacity-100 scale-100 visible translate-y-0"
+                    : "opacity-0 scale-95 invisible translate-y-1 pointer-events-none"
                 }`}
                 style={{ zIndex: 60 }}
                 onMouseEnter={() => setActiveDropdown(link.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
               >
                 <div className="bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm rounded-xl p-1">
-                  {link.children.map((child, index) => (
-                    <Link
-                      key={child.path}
-                      href={child.path}
-                      onClick={() => setActiveDropdown(null)}
-                      className={`block px-4 py-3 text-white hover:text-cyan-400 hover:bg-white/10 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-cyan-400/20 ${
-                        pathname === child.path ? 'text-cyan-400 bg-white/10' : ''
-                      } ${index !== 0 ? 'mt-1' : ''}`}
-                    >
-                      {child.name}
-                    </Link>
-                  ))}
+                  {link.children.map((child) => renderChildLink(child))}
                 </div>
               </div>
             </div>
           ) : (
-            <Link
-              key={link.path}
-              href={link.path!}
-              className="relative group py-2"
-            >
+            <Link key={link.path} href={link.path!} className="relative group py-2">
               <span
                 className={`transition-colors duration-200 ${
                   pathname === link.path
@@ -178,29 +169,28 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         className="md:hidden text-white p-1"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen((o) => !o)}
         aria-label="Toggle menu"
         aria-expanded={isOpen}
+        type="button"
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
-      {/* Mobile Dropdown */}
-      <div 
-        className={`absolute top-16 left-0 w-full bg-white/10 backdrop-blur-lg border border-white/20 rounded-b-2xl md:hidden overflow-hidden transition-all duration-300 ${
-          isOpen 
-            ? 'max-h-96 opacity-100 visible' 
-            : 'max-h-0 opacity-0 invisible'
-        }`}
+      {/* Mobile Dropdown (inside nav so top-full aligns) */}
+      <div
+        className={`absolute left-0 right-0 top-full mt-2 md:hidden overflow-hidden rounded-b-2xl transition-[max-height,opacity] duration-300 ${
+          isOpen ? "max-h-[800px] opacity-100 visible" : "max-h-0 opacity-0 invisible"
+        } bg-white/10 backdrop-blur-lg border border-white/20`}
         style={{ zIndex: 60 }}
       >
-        <div className="flex flex-col py-4 space-y-2">
+        <div className="flex flex-col py-4 space-y-2 px-2">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.name} className="w-full">
                 <button
-                  onClick={(e) => handleMobileDropdownClick(link.name, e)}
-                  className="flex justify-between items-center w-full px-6 py-3 text-white text-lg font-medium hover:bg-white/5 transition-all duration-150"
+                  onClick={() => toggleDropdown(link.name)}
+                  className="flex justify-between items-center w-full px-4 py-3 text-white text-lg font-medium hover:bg-white/5 transition-all duration-150"
                   aria-expanded={activeDropdown === link.name}
                   type="button"
                 >
@@ -212,26 +202,42 @@ export default function Navbar() {
                     }`}
                   />
                 </button>
-                
+
                 {/* Mobile Submenu */}
-                <div 
-                  className={`overflow-hidden transition-all duration-300 bg-white/10 backdrop-blur-sm mx-4 rounded-xl ${
-                    activeDropdown === link.name ? 'max-h-40 mb-2' : 'max-h-0'
+                <div
+                  className={`overflow-hidden transition-[max-height] duration-300 bg-white/10 backdrop-blur-sm mx-4 rounded-xl ${
+                    activeDropdown === link.name ? "max-h-60 mb-2" : "max-h-0"
                   }`}
                 >
                   <div className="p-2">
-                    {link.children.map((child, index) => (
-                      <Link
-                        key={child.path}
-                        href={child.path}
-                        onClick={handleMobileMenuClose}
-                        className={`block px-4 py-2 text-white text-base hover:text-cyan-400 hover:bg-white/10 transition-all duration-200 rounded-lg ${
-                          pathname === child.path ? 'text-cyan-400 bg-white/10' : ''
-                        } ${index !== 0 ? 'mt-1' : ''}`}
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
+                    {link.children.map((child) =>
+                      // for mobile we want to close menu after click
+                      /^https?:\/\//.test(child.path)
+                        ? (
+                          <a
+                            key={child.path}
+                            href={child.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={handleMobileMenuClose}
+                            className="block px-4 py-2 text-white text-base hover:text-cyan-400 hover:bg-white/10 transition-all duration-200 rounded-lg"
+                          >
+                            {child.name}
+                          </a>
+                        )
+                        : (
+                          <Link
+                            key={child.path}
+                            href={child.path}
+                            onClick={handleMobileMenuClose}
+                            className={`block px-4 py-2 text-white text-base hover:text-cyan-400 hover:bg-white/10 transition-all duration-200 rounded-lg ${
+                              pathname === child.path ? "text-cyan-400 bg-white/10" : ""
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        )
+                    )}
                   </div>
                 </div>
               </div>
@@ -240,7 +246,7 @@ export default function Navbar() {
                 key={link.path}
                 href={link.path!}
                 onClick={handleMobileMenuClose}
-                className={`relative px-6 py-3 text-white text-lg font-medium transition-all duration-150 hover:bg-white/5 ${
+                className={`relative px-4 py-3 text-white text-lg font-medium transition-all duration-150 hover:bg-white/5 ${
                   pathname === link.path ? "text-cyan-400 bg-white/5" : "hover:text-cyan-300"
                 }`}
               >

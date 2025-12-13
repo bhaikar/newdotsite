@@ -25,8 +25,8 @@ const Card = ({
               src={imageSrc}
               alt={imageAlt}
               className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:brightness-110"
-              width={80}
-              height={80}
+              width={400}
+              height={320}
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl sm:rounded-2xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>

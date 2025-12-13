@@ -53,7 +53,7 @@ const fourthYear = [
   {
     name: "Nithyashree C P",
     description: "Editorial Head",
-    imageSrc: "/images/OTImages/nithya.jpg",
+    imageSrc: "/images/OTImages/Nithya.jpg",
     imageAlt: "nithyashree"
   },
   {
@@ -95,7 +95,7 @@ const fourthYear = [
   {
     name: "Saniya",
     description: "Creative Director",
-    imageSrc: "/images/OTImages/saniya.jpeg",
+    imageSrc: "/images/OTImages/Saniya.jpeg",
     imageAlt:   "Jahnavi H K"
   }
 ];

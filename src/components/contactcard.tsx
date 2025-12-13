@@ -7,13 +7,13 @@ const Card = () => {
     {
       id: 1,
       name: "Tatvika",
-      phone: "+1 (555) 123-4567",
+      phone: "+91 93807 97698",
       image: "/images/OTImages/Tatvika.jpg"
     },
     {
       id: 2,
       name: "Akash",
-      phone: "+1 (555) 987-6543",
+      phone: "+91 7019225918",
       image: "/images/OTImages/Akash.png"
     }
   ];

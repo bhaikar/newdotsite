@@ -2,7 +2,15 @@
 const nextConfig = {
   reactStrictMode: true, // helps catch potential React issues
   swcMinify: true,       // faster builds
-  // Add any other settings here if needed
+  // Rewrite root path to serve index.html
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/index.html',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

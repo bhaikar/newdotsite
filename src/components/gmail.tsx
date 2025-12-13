@@ -10,15 +10,14 @@ const Tooltip = () => {
             <div className="user">
               <div className="img">Gmail</div>
               <div className="details">
-                <div className="name">User</div>
-                <div className="username">user@gmail.com</div>
+                <div className="name">Devops</div>
+                <div className="username">devopsteammalnad@gmail.com</div>
               </div>
             </div>
-            <div className="about">500+ Emails</div>
           </div>
         </div>
         <div className="text">
-          <a className="icon" href="#">
+          <a className="icon" href="mailto:devopsteammalnad@gmail.com">
             <div className="layer">
               <span />
               <span />
