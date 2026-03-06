@@ -1,20 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/navbar";
 import Card from "@/components/Card";
 import Footer from "@/components/footer";
 
 export default function AboutPage() {
   return (
-    
     <div className="min-h-screen bg-gray-900 text-white relative">
-      {/* Navbar is fixed inside the component: put it once at top */}
       <Navbar />
-
-      {/* main content: give top padding so fixed navbar doesn't overlap */}
       <main className="pt-28">
-        {/* About Section */}
         <section className="py-12 px-4 text-center md:py-16">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">About Us</h1>
           <div className="w-24 sm:w-32 lg:w-40 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4 sm:mt-6 rounded-full" />
@@ -27,7 +22,6 @@ export default function AboutPage() {
 
         <hr className="border-gray-700 mb-10 w-[85%] md:w-[75%] mx-auto" />
 
-        {/* Values */}
         <section className="px-4 text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Values</h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
@@ -38,7 +32,6 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* Cards */}
         <section className="px-4">
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2 place-items-center px-4 md:px-12">
             <Card
@@ -52,7 +45,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Footer */}
         <div className="mt-16 md:mt-20">
           <Footer />
         </div>

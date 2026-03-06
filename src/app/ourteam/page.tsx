@@ -7,21 +7,21 @@ import Card from '@/components/otcard';
 // Add this team data at the top of your component
 const Convener = [
   {
-    name: "Dr. Prashanth H S",
+    name: "Mr. Vinod A M",
     description: " Assistant Professor, Dept. of CSE",
     imageSrc: "/images/OTImages/vinod.jpg",
-    imageAlt: "Dr. Prashanth H S"
+    imageAlt: "Mr. Vinod A M"
   }
 ];
 const fourthYear = [
   {
-    name: "Tatvika Sharma",
+    name: "Tatvika Jain",
     description: "President",
     imageSrc: "/images/OTImages/Tatvika.jpg",
     imageAlt: "tatvika"
   },
   {
-    name: "Akash Hariharan", 
+    name: "Akash Harihar", 
     description: "Vice President",
     imageSrc: "/images/OTImages/Akash.png",
     imageAlt: "akash"
@@ -114,13 +114,7 @@ const thirdYear = [
       imageAlt: "Prathyusha v Kumar"
       },
       
-    {
-      name: "Akshatha",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/aksh.png",
-      imageAlt: "Akshatha"
-      },
-      
+         
     {
       name: "Anuj",
       description: "Student Member",
