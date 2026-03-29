@@ -19,7 +19,7 @@ const workshops = [
         imageAlt: "Web Development"
     },
     {
-        name: "Wbasics On Video Editing",
+        name: "Basics On Video Editing",
         description: "In November 2022, the club members held a session on basic video editing in the AB block. This session introduced participants to essential video editing techniques and tools, offering hands-on experience with popular editing software and enhancing their multimedia skills following the earlier web development workshops.",
         imageSrc: "/images/workshopimages/Video.png",
         imageAlt: "video Editing"

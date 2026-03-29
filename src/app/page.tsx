@@ -1,18 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
-
 export default function Home() {
-  useEffect(() => {
-    // Redirect to index.html immediately
-    window.location.href = "/index.html";
-  }, []);
-
-  // Show a loading state while redirecting
   return (
-    <main className="flex items-center justify-center min-h-screen bg-white">
+    <main className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
       <div className="text-center">
-        <p className="text-gray-600">Loading...</p>
+        <h1 className="text-4xl font-bold mb-4">Welcome to DevOps Team</h1>
+        <p className="text-gray-300">Explore our events, projects, and workshops.</p>
       </div>
     </main>
   );

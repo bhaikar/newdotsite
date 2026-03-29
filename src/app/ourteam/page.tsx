@@ -47,7 +47,7 @@ const fourthYear = [
   {
     name: "Sunitha P",
     description: "Head of Internal Affairs",
-    imageSrc: "/images/OTImages/Sunitha.heic",
+    imageSrc: "/images/OTImages/Sunitha.jpg",
     imageAlt: "sunitha"
   },
   {
