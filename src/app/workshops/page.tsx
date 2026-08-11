@@ -45,7 +45,7 @@ const workshops = [
     {
         name: "Basic web development",
         description: "The Web Development workshop started on May 22, 2024, with a session on HTML and CSS basics. The following day, participants learned portfolio building, focusing on creating their own portfolios. Both sessions were held in AB Block.",
-        imageSrc: "/images/workshopimages/Intro of Web.jpg",
+        imageSrc: "/images/workshopimages/Intro Of Web.jpg",
         imageAlt: "Web Development"
     },
     {

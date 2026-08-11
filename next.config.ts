@@ -3,4 +3,4 @@ const nextConfig = {
   reactStrictMode: true, // helps catch potential React issues
 };
 
-module.exports = nextConfig;
+export default nextConfig;

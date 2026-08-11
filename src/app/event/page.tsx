@@ -12,8 +12,23 @@ const EventTimeline = () => {
 
   const events = useMemo(() => [
     {
+      id: 6,
+      year: "2K26",
+      title: "Hack.MCE 6.0",
+      images: [
+        "/images/eventimages/Coming-soon.jpg",
+      ],
+      description: `
+
+Techno Gaming Fest 2025
+Get Ready for the Ultimate Experience!
+On Nov 22, Team DevOps hosted a thrilling state-level hackathon at MCE, bringing together brilliant minds to tackle the challenge of designing the MCE Student Hub! Creativity, collaboration, and innovation at their best!
+On Nov 23, MCE hosted Cicada, a thrilling puzzle event crafted from scratch by our team! With 400 participants tackling intricate puzzles, it was a battle of wits, curiosity, and innovation. A memorable showcase of intellect and determination!
+On Nov 24, MCE hosted an electrifying State-Level Gameathon featuring BGMI & Free Fire! With 200 gamers showcasing strategy, teamwork, and reflexes, it was a thrilling celebration of gaming culture and camaraderie.`
+    },
+    {
       id: 5,
-      year: "2K24",
+      year: "2K25",
       title: "Hack.MCE 5.0",
       images: [
         "/images/eventimages/HackMce4.0/1.jpg",
@@ -32,7 +47,7 @@ On Nov 23, MCE hosted Cicada, a thrilling puzzle event crafted from scratch by o
 On Nov 24, MCE hosted an electrifying State-Level Gameathon featuring BGMI & Free Fire! With 200 gamers showcasing strategy, teamwork, and reflexes, it was a thrilling celebration of gaming culture and camaraderie.`
     },
     {
-      id: 4,
+    id: 4,
       year: "2K24",
       title: "Hack.MCE 4.0",
       images: [
@@ -57,7 +72,7 @@ On Nov 24, MCE hosted an electrifying State-Level Gameathon featuring BGMI & Fre
       year: "2K23",
       title: "Hack.MCE 3.0",
       images: [
-        "/images/eventimages/HackMce3.0/1.jpg",
+        "/images/eventimages/HackMce3.0/1.JPG",
         "/images/eventimages/HackMce3.0/2.jpg",
         "/images/eventimages/HackMce3.0/3.jpg",
         "/images/eventimages/HackMce3.0/4.jpg",
@@ -256,27 +271,27 @@ Two standout events, Thief City and Phat Anthaheli, were major highlights of .By
         <div className="max-w-6xl mx-auto">
           <div ref={timelineRef} className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-slate-700 h-full">
-              <div 
-                ref={progressRef} 
-                className="w-full bg-gradient-to-b from-cyan-400 to-blue-500 transition-all duration-300 ease-out" 
-                style={{ height: '0%' }} 
+            <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-0.5 bg-slate-700 h-full">
+              <div
+                ref={progressRef}
+                className="w-full bg-gradient-to-b from-cyan-400 to-blue-500 transition-all duration-300 ease-out"
+                style={{ height: '0%' }}
               />
             </div>
 
-            <div className="space-y-32">
+            <div className="space-y-16 md:space-y-24">
               {events.map((event, index) => (
-                <div key={event.id} className="timeline-item relative flex flex-col md:flex-row min-h-screen">
+                <div key={event.id} className="timeline-item relative flex flex-col md:flex-row">
                   {/* Timeline point */}
-                  <div className={`timeline-point absolute left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full border-4 flex items-center justify-center text-sm font-bold z-20 transition-all duration-500 ${activeItems.has(index) ? 'bg-gradient-to-r from-cyan-400 to-blue-500 border-cyan-400 text-slate-900 shadow-lg shadow-cyan-400/50' : 'bg-slate-800 border-slate-600 text-slate-300'}`}>
+                  <div className={`timeline-point absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full border-4 flex items-center justify-center text-xs md:text-sm font-bold z-20 transition-all duration-500 ${activeItems.has(index) ? 'bg-gradient-to-r from-cyan-400 to-blue-500 border-cyan-400 text-slate-900 shadow-lg shadow-cyan-400/50' : 'bg-slate-800 border-slate-600 text-slate-300'}`}>
                     {event.year}
                   </div>
 
-                  <div className="w-full flex mt-20 md:mt-0">
+                  <div className="w-full flex pl-16 md:pl-0">
                     {index % 2 === 0 ? (
                       <>
-                        <div className="w-full md:w-1/2 pr-6 flex justify-end">
-                          <div className={`max-w-lg w-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] ${activeItems.has(index) ? 'opacity-100 translate-x-0' : '-translate-x-32 opacity-0'}`}>
+                        <div className="w-full md:w-1/2 md:pr-6 flex justify-start md:justify-end">
+                          <div className={`max-w-lg w-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] ${activeItems.has(index) ? 'opacity-100 translate-x-0' : 'md:-translate-x-32 opacity-0'}`}>
                             <ImageSlider images={event.images} eventId={event.id} />
                             <div className="p-8">
                               <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
@@ -289,8 +304,8 @@ Two standout events, Thief City and Phat Anthaheli, were major highlights of .By
                     ) : (
                       <>
                         <div className="hidden md:block md:w-1/2" />
-                        <div className="w-full md:w-1/2 pl-6 flex justify-start">
-                          <div className={`max-w-lg w-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] ${activeItems.has(index) ? 'opacity-100 translate-x-0' : 'translate-x-32 opacity-0'}`}>
+                        <div className="w-full md:w-1/2 md:pl-6 flex justify-start">
+                          <div className={`max-w-lg w-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] ${activeItems.has(index) ? 'opacity-100 translate-x-0' : 'md:translate-x-32 opacity-0'}`}>
                             <ImageSlider images={event.images} eventId={event.id} />
                             <div className="p-8">
                               <h3 className="text-2xl font-bold mb-2">{event.title}</h3>

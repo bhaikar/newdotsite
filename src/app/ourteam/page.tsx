@@ -11,6 +11,12 @@ const Convener = [
     description: " Assistant Professor, Dept. of CSE",
     imageSrc: "/images/OTImages/vinod.jpg",
     imageAlt: "Mr. Vinod A M"
+  },
+  {
+    name: "Mr. Vinod A M",
+    description: " Assistant Professor, Dept. of CSE",
+    imageSrc: "/images/OTImages/vinod.jpg",
+    imageAlt: "Mr. Vinod A M"
   }
 ];
 const fourthYear = [
@@ -225,7 +231,7 @@ const OurTeam = () => {
             <Navbar />
             <div className="w-full min-h-screen flex flex-col items-center pt-20 pb-10">
                 <h1 className="text-4xl font-bold text-white mb-10">Convener</h1>
-                <div className="grid grid-cols-1  mb-12">
+                <div className="grid grid-cols-2  mb-12">
                     {Convener.map((member, index) => (
                         <Card
                             key={index}

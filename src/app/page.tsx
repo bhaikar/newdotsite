@@ -1,12 +1,13 @@
-"use client";
+import Hero from "@/components/Hero";
+import { display } from "./fonts";
 
-export default function Home() {
+export default function Page() {
+  // The canvas rasterises the word itself, so it needs a real family name
+  // rather than a CSS variable — next/font exposes one via `.style`.
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to DevOps Team</h1>
-        <p className="text-gray-300">Explore our events, projects, and workshops.</p>
-      </div>
-    </main>
+    <div className="min-h-screen bg-gray-900 text-white relative">
+      <Hero fontFamily={display.style.fontFamily} />
+      
+    </div>
   );
 }
