@@ -13,17 +13,17 @@ interface Person {
 const people: Person[] = [
   {
     id: 1,
-    name: "Tatvika",
-    role: "Point of contact",
+    name: "Tilak Shetty",
+    role: "President",
     phone: "+91 93807 97698",
-    image: "/images/OTImages/Tatvika.jpg",
+    image: "/images/OTImages/tilak.jpg",
   },
   {
     id: 2,
-    name: "Akash",
-    role: "Point of contact",
+    name: "Yashika D",
+    role: "Vice President",
     phone: "+91 70192 25918",
-    image: "/images/OTImages/Akash.png",
+    image: "/images/OTImages/Yash.png",
   },
 ];
 

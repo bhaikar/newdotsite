@@ -21,172 +21,64 @@ const Convener = [
 ];
 const fourthYear = [
   {
-    name: "Tatvika Jain",
+    name: "Tilak Shetty",
     description: "President",
-    imageSrc: "/images/OTImages/Tatvika.jpg",
-    imageAlt: "tatvika"
+    imageSrc: "/images/OTImages/tilak.jpg",
+    imageAlt: "tilak"
   },
   {
-    name: "Akash Harihar", 
+    name: "Yashika D", 
     description: "Vice President",
-    imageSrc: "/images/OTImages/Akash.png",
-    imageAlt: "akash"
+    imageSrc: "/images/OTImages/Yash.png",
+    imageAlt: "yashika"
   },
   {
-    name: "Kushal C J",
-    description: "Digital Head &                  Treasurer",
-    imageSrc: "/images/OTImages/Kushal.jpg", 
-    imageAlt: "kushal"
+    name: "Namrath",
+    description: "Digital Head &                  Media Director",
+    imageSrc: "/images/OTImages/namrath.png", 
+    imageAlt: "namrath"
   },
   {
-    name: "Jnanavi Venugopal",
+    name: "Nithin H C",
     description: "General Secretary",
-    imageSrc: "/images/OTImages/Jnanavi.jpg",
-    imageAlt: "jnanavi"
+    imageSrc: "/images/OTImages/Nithin.png",
+    imageAlt: "nithin"
   },
   {
-    name: "Sanjana Desh",
+    name: "Prasad Malegaon",
+    description: "General Secretary",
+    imageSrc: "/images/OTImages/PP.png",
+    imageAlt: "prasad"
+  },
+  {
+    name: "Anuj",
     description: "Technical Director",
-    imageSrc: "/images/OTImages/Sanjana.jpg",
-    imageAlt: "sanjana"
+    imageSrc: "/images/OTImages/Anuj.png",
+    imageAlt: "anuj"
   },
   {
-    name: "Sunitha P",
+    name: "Prathyusha v Kumar",
     description: "Head of Internal Affairs",
-    imageSrc: "/images/OTImages/Sunitha.jpg",
-    imageAlt: "sunitha"
+    imageSrc: "/images/OTImages/prathyusha.jpeg",
+    imageAlt: "prathyusha"
   },
   {
-    name: "Nithyashree C P",
+    name: "Mariam Noorani",
     description: "Editorial Head",
-    imageSrc: "/images/OTImages/Nithya.jpg",
-    imageAlt: "nithyashree"
+    imageSrc: "/images/OTImages/Mariam.png",
+    imageAlt: "mariam"
   },
+  
   {
-    name: "Nishigandha S",
-    description: "Editorial Head",
-    imageSrc: "/images/OTImages/Nishi.jpg",
-    imageAlt: "Maya Patel"
-  },
-  {
-    name: "Karthik",
-    description: "Event Director",
-    imageSrc: "/images/OTImages/karthik3.jpg",
-    imageAlt: "Karthik"
-  },
-  {
-    name: "Mohammed Azam",
-    description: "Event Director & Project Director",
-    imageSrc: "/images/OTImages/azam.jpg",
-    imageAlt: "Mohammed Azam"
-  },
-  {
-    name: "Vishwas M Bharadwaj",
-    description: "Project Director",
-    imageSrc: "/images/OTImages/vishwas.jpg",
-    imageAlt: "Vishwas M Bharadwaj"
-  },
-  {
-    name: "Diya S Thange",
-    description: "Project Director",
-    imageSrc: "/images/OTImages/diya.png",
-    imageAlt: "Diya S Thange"
-  },
-  {
-    name: "Jahnavi H K",
+    name: "Geetha H",
     description: "Creative Director",
-    imageSrc: "/images/OTImages/jahnavi.jpg",
-    imageAlt:   "Jahnavi H K"
-  },
-  {
-    name: "Saniya",
-    description: "Creative Director",
-    imageSrc: "/images/OTImages/Saniya.jpeg",
-    imageAlt:   "Jahnavi H K"
+    imageSrc: "/images/OTImages/Geetha.jpg",
+    imageAlt:   "Geetha H"
   }
 ];
 
-const thirdYear = [
-    {
-      name: "Nithin H C",
-      description: "Treasury Subordinate",
-      imageSrc: "/images/OTImages/Nithin.png",
-      imageAlt: "Nithin H C"
-      },
-    {
-      name: "Prathyusha v Kumar",
-      description: "Treasury Subordinate",
-      imageSrc: "/images/OTImages/pratyusha .jpg",
-      imageAlt: "Prathyusha v Kumar"
-      },
-      
-         
-    {
-      name: "Anuj",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/Anuj.png",
-      imageAlt: "Anuj"
-      },
-      
-    {
-      name: "Geetha H",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/Geetha.jpg",
-      imageAlt: "Geetha H"
-      },
-      
-    {
-      name: "Prasad Malegaon",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/PP.png",
-      imageAlt: "Prasad Malegaon"
-      },
-      
-    {
-      name: "Mariam Noorani",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/Mariam.png",
-      imageAlt: "Mariam Noorani"
-      },
-    {
-      name: "Likith Shetty",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/liki.jpg",
-      imageAlt: "Likith Shetty"
-      },
-    {
-      name: "Namrath",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/namrath.jpg",
-      imageAlt: "Namrath"
-      },
-    {
-      name: "Tilak Shetty",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/tilak.jpg",
-      imageAlt: "Tilak Shetty"
-      },
-    {
-      name: "Yashika D",
-      description: "Student Member",
-      imageSrc: "/images/OTImages/Yash.png",
-      imageAlt: "Yashika D"
-      },
-];
-
-const secondYear = [
-    {
-      name: "Akash",
-      description: "Student Member",
-        imageSrc: "/images/OTImages/akash1.JPG",
-        imageAlt: "Akash"
-        },
-    {
-      name: "Chandana HR",
-      description: "Student Member",
-        imageSrc: "/images/OTImages/chandana.jpg",
-        imageAlt: "Chandana HR"
-        },
+const thirdYear  = [
+    
     {
       name: "DHEERAJ KUMAR BHAIKAR",
       description: "Student Member",
@@ -194,36 +86,62 @@ const secondYear = [
         imageAlt: "DHEERAJ KUMAR BHAIKAR"
         },
     {
-      name: "Karthik K L",
+      name: "G Eramma",
       description: "Student Member",
-        imageSrc: "/images/OTImages/kartik.jpg",
-        imageAlt: "Karthik K L"
+        imageSrc: "/images/OTImages/Eramma.jpg",
+        imageAlt: "eramma"
         },
     {
-      name: "Rashmi M",
+      name: "Punyashree",
       description: "Student Member",
-        imageSrc: "/images/OTImages/rashmi.jpg",
-        imageAlt: "Rashmi M"
+        imageSrc: "/images/OTImages/Punya.jpg",
+        imageAlt: "Punyashree"
         },
     {
-      name: "Shreedha M M",
+      name: "Shasank",
       description: "Student Member",
-        imageSrc: "/images/OTImages/shreedha.jpg",
-        imageAlt: "Shreedha M M"
+        imageSrc: "/images/OTImages/Shashank.jpg",
+        imageAlt: "Shasank"
         },
-    {
-      name: "Shravya Jain HS",
-      description: "Student Member",
-        imageSrc: "/images/OTImages/shravya.jpg",
-        imageAlt: "Shravya Jain HS"
-        },
-    {
-      name: "Tejas",
-      description: "Student Member",
-        imageSrc: "/images/OTImages/tejas.jpg",
-        imageAlt: "Tejas"
-        },
+   
     ];
+
+const secondYear= [
+    {
+      name: "Akshay K S",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/Akshay.jpg",
+        imageAlt: "Akshay"
+        },
+    {
+      name: "Huthrika M",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/Huthrika.jpg",
+        imageAlt: "Huthrika"
+        },
+    {
+      name: "Kishor E",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/kishor.jpeg",
+        imageAlt: "Kishor"
+        },
+
+          {
+        name: "J S Nidhish ",
+        description: "Student Member",
+          imageSrc: "/images/OTImages/Nidesh.jpg",
+          imageAlt: "Nidhish"
+          },
+    {
+      name: "Parinith G",
+      description: "Student Member",
+        imageSrc: "/images/OTImages/Parinith.jpg",
+        imageAlt: "Parinith"
+        }
+    
+
+    ];
+
     
 const OurTeam = () => {
     return (
