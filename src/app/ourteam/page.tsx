@@ -7,16 +7,16 @@ import Card from '@/components/otcard';
 // Add this team data at the top of your component
 const Convener = [
   {
-    name: "Mr. Vinod A M",
+    name: "Mr. Keerthi Kumar H M",
     description: " Assistant Professor, Dept. of CSE",
-    imageSrc: "/images/OTImages/vinod.jpg",
-    imageAlt: "Mr. Vinod A M"
+    imageSrc: "/images/OTImages/keerthi.jpeg",
+    imageAlt: "Mr. Keerthi Kumar H M"
   },
   {
-    name: "Mr. Vinod A M",
+    name: "Mr. Hemanth T S",
     description: " Assistant Professor, Dept. of CSE",
-    imageSrc: "/images/OTImages/vinod.jpg",
-    imageAlt: "Mr. Vinod A M"
+    imageSrc: "/images/OTImages/Hemanth.jpg",
+    imageAlt: "Mr. Hemanth T S"
   }
 ];
 const fourthYear = [
