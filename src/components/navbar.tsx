@@ -104,7 +104,7 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link href="/" className="flex items-center space-x-2">
-        <Image src="/logo.png" alt="Logo" width={40} height={40} />
+        <Image src="/logo.png" alt="Logo" width={50} height={50} />
       </Link>
 
       {/* Desktop Links */}

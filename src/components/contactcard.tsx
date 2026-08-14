@@ -15,14 +15,14 @@ const people: Person[] = [
     id: 1,
     name: "Tilak Shetty",
     role: "President",
-    phone: "+91 93807 97698",
+    phone: "+91 9480567624",
     image: "/images/OTImages/tilak.jpg",
   },
   {
     id: 2,
     name: "Yashika D",
     role: "Vice President",
-    phone: "+91 70192 25918",
+    phone: "+91 9110212410",
     image: "/images/OTImages/Yash.png",
   },
 ];
