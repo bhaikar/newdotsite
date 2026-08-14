@@ -9,11 +9,25 @@ export default function CursorSmokeTrail() {
       "position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:99999;";
     document.body.appendChild(canvas);
 
-    const ctx = canvas.getContext("2d")!;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      // Context creation failed (rare) — bail out cleanly instead of throwing.
+      document.body.removeChild(canvas);
+      return;
+    }
+
+    // ── DPR-aware sizing ────────────────────────────────────
+    // Without this, canvas.width/height use CSS pixels directly and the
+    // drawing looks blurry on high-DPI/Retina displays.
+    let dpr = Math.min(window.devicePixelRatio || 1, 2); // cap to avoid huge canvases on 3x displays
 
     const resize = () => {
-      canvas.width  = window.innerWidth;
-      canvas.height = window.innerHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width  = window.innerWidth  * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width  = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // reset + scale, avoids compounding on repeated resizes
     };
     resize();
     window.addEventListener("resize", resize);
@@ -32,6 +46,12 @@ export default function CursorSmokeTrail() {
     };
 
     const pool: P[] = [];
+
+    // ── Tuning: reduced trail density ──────────────────────
+    const MAX_PARTICLES     = 80;  // hard cap regardless of spawn rate
+    const SPAWNS_PER_TICK   = 1;   // was 5
+    const SPAWN_CHANCE      = 0.5; // only spawn on ~half of moving frames, thins the trail further
+
     let mx = 0, my = 0, pmx = 0, pmy = 0;
     let moving = false;
     let moveTid: ReturnType<typeof setTimeout>;
@@ -47,6 +67,8 @@ export default function CursorSmokeTrail() {
     window.addEventListener("mousemove", onMove);
 
     const spawn = () => {
+      if (pool.length >= MAX_PARTICLES) return; // hard cap — prevents unbounded growth
+
       const dx   = mx - pmx;
       const dy   = my - pmy;
       const spd  = Math.sqrt(dx * dx + dy * dy);
@@ -188,15 +210,16 @@ export default function CursorSmokeTrail() {
     const tick = () => {
       raf = requestAnimationFrame(tick);
 
-      const now   = performance.now();
-      const dt    = Math.min((now - last) / 1000, 0.05);
+      const now = performance.now();
+      const dt  = Math.min((now - last) / 1000, 0.05);
       last = now;
 
-      if (moving) {
-        for (let s = 0; s < 5; s++) spawn();
+      if (moving && Math.random() < SPAWN_CHANCE) {
+        for (let s = 0; s < SPAWNS_PER_TICK; s++) spawn();
       }
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // clearRect uses CSS-pixel coordinates because ctx is scaled by dpr above.
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
       for (let i = pool.length - 1; i >= 0; i--) {
         const p = pool[i];

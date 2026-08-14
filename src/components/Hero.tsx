@@ -6,13 +6,13 @@ import HeroCarousel, { type Slide } from "./HeroCarousel";
 import { display, body } from "@/app/fonts";
 
 const SLIDES: Slide[] = [
-  {
-    title: "We are Team DevOps",
-    subtitle: "Build from basics.",
+   {
+    title: "We are DevOps",
+    subtitle: "A community of builders shipping real projects together.",
   },
   {
-    title: "Build. Break. Learn.",
-    subtitle: "A community of builders shipping real projects together.",
+    title: "our Moto",
+    subtitle: "Build from Basics -- Our approach starts with a solid foundation to create extraordinary results",
   },
   {
     title: "From idea to deploy",
@@ -34,8 +34,8 @@ export default function Hero({ fontFamily }: { fontFamily: string }) {
         className="hero__canvas"
         word="DEVOPS"
         fontFamily={fontFamily}
-        fontWeight={600}
-        density={4}
+        fontWeight={650}
+        density={3}
       />
 
       <div className="hero__grain" aria-hidden="true" />

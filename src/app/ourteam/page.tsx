@@ -122,7 +122,7 @@ const secondYear= [
     {
       name: "Kishor E",
       description: "Student Member",
-        imageSrc: "/images/OTImages/kishor.jpeg",
+        imageSrc: "/images/OTImages/Kishor.jpeg",
         imageAlt: "Kishor"
         },
 
@@ -149,7 +149,7 @@ const OurTeam = () => {
             <Navbar />
             <div className="w-full min-h-screen flex flex-col items-center pt-20 pb-10">
                 <h1 className="text-4xl font-bold text-white mb-10">Convener</h1>
-                <div className="grid grid-cols-2  mb-12">
+                <div className="grid grid-cols-2 gap-15  mb-12">
                     {Convener.map((member, index) => (
                         <Card
                             key={index}
